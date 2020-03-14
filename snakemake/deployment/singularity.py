@@ -127,7 +127,7 @@ def shellcmd(
     if container_workdir:
         args += " --pwd {}".format(container_workdir)
 
-    cmd = "{} singularity exec -c --home {} {} {} {} -c '{}'".format(
+    cmd = "{} singularity exec -c --bind /hps:/hps --home {} {} {} {} -c '{}'".format(
         envvars,
         os.getcwd(),
         args,
